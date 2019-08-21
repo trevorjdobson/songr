@@ -1,5 +1,6 @@
 package com.trevorjdobson.songr;
 
+import com.trevorjdobson.songr.controllers.HomeController;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

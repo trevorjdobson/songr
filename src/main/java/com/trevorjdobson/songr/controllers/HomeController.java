@@ -1,4 +1,4 @@
-package com.trevorjdobson.songr;
+package com.trevorjdobson.songr.controllers;
 
 
 import org.apache.tomcat.util.codec.binary.StringUtils;
