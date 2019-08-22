@@ -1,10 +1,8 @@
 package com.trevorjdobson.songr.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 public class Album {
@@ -18,6 +16,9 @@ public class Album {
     int length;
     String imageUrl;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "album")
+    List<Song> songs;
+
     public Album(){}
 
     public Album(String title, String artist, int songCount, int length, String imageUrl){
@@ -27,6 +28,12 @@ public class Album {
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+    public String toString(){
+        return "Album: " + title + " Artist: " + artist;
+    }
+    public List<Song> getSongs() {
+        return songs;
     }
 
     public long getId() {

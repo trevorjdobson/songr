@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Songs</title>
+</head>
+<body>
+    <div th:each="song : ${songs}" >
+        <h3 th:id="${song.title}" th:text="${song.title}">Album Title</h3>
+        <p>
+            <a th:href="${ '/albums/' + song.album.id}"><span th:text="${song.album}"></span></a>
+        </p>
+        <p>
+            Track Number: <span th:text="${song.trackNumber}"></span>
+        </p>
+        <p>
+            Length (in seconds): <span th:text="${song.length}" ></span>
+        </p>
+
+
+    </div>
+</body>
+</html>
